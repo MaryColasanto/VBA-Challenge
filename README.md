@@ -14,11 +14,17 @@ To determine the last row of the ticker column, I utilized code provided in clas
 'code()'
   LastRow_Ticker = ws.Cells(Rows.Count, 1).End(xlUp).Row
   
-New columns headers for "Ticker", "Yearly Change", "Percent Change", "Total Stock Volume" were added.
+New columns headers for "Ticker", "Yearly Change", "Percent Change", and "Total Stock Volume" were added.
+
+For the entire main analysis a single For loop with multiple nested If statements was used to look through the data and report the requested values to the output table. The For loop started at row 2 and continued through the last row that contained data. 
 
 ### Ticker symbol ###
 
+To add each ticker symbol to the output table: if the current ticker symbol did not match the ticker symbol in the next cell, the current ticker symbol was added to the output table. 
+
 ### Yearly change ###
+
+The yearly change was established by 
 
 ### Percent change ###
 
@@ -30,7 +36,7 @@ New columns headers for "Ticker", "Yearly Change", "Percent Change", "Total Stoc
 
 The bonus assignment asks for additional analysis of the data: greatest percent increase and decrease and greatest total volume. It also requests that we analyze the data for all three years provided.  
 
-New columns headers for "Ticker", "Yearly Change", "Percent Change", "Total Stock Volume" were added.
+New columns headers for "Greatest % Increase", "Greatest % Decrease", "Greatest Total Volume", "Ticker", and "Value" were added.
 
 
 ### Greatest percent increase and decrease ###
