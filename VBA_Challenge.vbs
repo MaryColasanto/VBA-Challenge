@@ -35,29 +35,23 @@ ws.Cells(4, 14) = "Greatest Total Volume"
 ws.Cells(1, 15) = "Ticker"
 ws.Cells(1, 16) = "Value"
 
-    ' Loop through all data in the column
-    For i = 2 To LastRow_Ticker
+' Loop through all data in the column
+For i = 2 To LastRow_Ticker
     
-         ' Identify Starting Value for Percent Change
-         If ws.Cells(i, 1).Value <> ws.Cells(i - 1, 1) Then
-            Open_Price = ws.Cells(i, 3).Value
-
-         ' Identify when the ticker symbol changes
-         ElseIf ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
-    
-             ' Output the Ticker Symbol
-            Ticker_Symbol = ws.Cells(i, 1).Value
-        
-             ' Print the Ticker Symbol in the Output Table
-            ws.Range("I" & Output_Table_Row).Value = Ticker_Symbol
-        
-            ' Output Yearly Change
-            Close_Price = ws.Cells(i, 6).Value
-            Yearly_Change = Close_Price - Open_Price
-       
-             ' Print Yearly Change in the Output Table
-             ws.Range("J" & Output_Table_Row).Value = Yearly_Change
-             
+    ' Identify Starting Value for Percent Change
+    If ws.Cells(i, 1).Value <> ws.Cells(i - 1, 1) Then
+        Open_Price = ws.Cells(i, 3).Value
+    ' Identify when the ticker symbol changes
+    ElseIf ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
+        ' Output the Ticker Symbol
+        Ticker_Symbol = ws.Cells(i, 1).Value
+        ' Print the Ticker Symbol in the Output Table
+        ws.Range("I" & Output_Table_Row).Value = Ticker_Symbol
+        ' Output Yearly Change
+        Close_Price = ws.Cells(i, 6).Value
+        Yearly_Change = Close_Price - Open_Price
+       ' Print Yearly Change in the Output Table
+        ws.Range("J" & Output_Table_Row).Value = Yearly_Change
                 'Conditional formatting color change for Yearly Change
                 If Yearly_Change = 0 Then
                     ws.Range("J" & Output_Table_Row).Interior.ColorIndex = 0
@@ -66,44 +60,34 @@ ws.Cells(1, 16) = "Value"
                 Else
                     ws.Range("J" & Output_Table_Row).Interior.ColorIndex = 3
                 End If
-         
-             ' Output Percent Change
-                    If Yearly_Change <> "0" And Open_Price <> "0" Then
-                        Percent_Change = (Yearly_Change / Open_Price)
-                        ' Print Percent Change in the Output Table
-                        ws.Range("K" & Output_Table_Row).Value = Percent_Change
-                        ws.Range("K" & Output_Table_Row).NumberFormat = "0.00%"
-                    ElseIf Yearly_Change <> "0" And Open_Price = "0" Then
-                        Percent_Change = Yearly_Change
-                        ' Print Percent Change in the Output Table
-                        ws.Range("K" & Output_Table_Row).Value = Percent_Change
-                        ws.Range("K" & Output_Table_Row).NumberFormat = "0.00%"
-                    Else
-                        ws.Range("K" & Output_Table_Row).Value = "0.00%"
-                    End If
-       
-            ' Output the Total Stock Volume
-            Total_Volume = Total_Volume + ws.Cells(i, 7).Value
-        
-            ' Print the Total Stock Volume
-             ws.Range("L" & Output_Table_Row).Value = Total_Volume
-           
-            ' Add one to the summary table row
-             Output_Table_Row = Output_Table_Row + 1
-        
-             ' Reset variables
-            Total_Volume = 0
-            Open_Price = "0.00"
-            Close_Price = "0.00"
-        
-        ' If the following cell has the same Ticker Symbol
+        ' Output Percent Change
+        If Yearly_Change <> "0" And Open_Price <> "0" Then
+            Percent_Change = (Yearly_Change / Open_Price)
+            ' Print Percent Change in the Output Table
+            ws.Range("K" & Output_Table_Row).Value = Percent_Change
+        ElseIf Yearly_Change <> "0" And Open_Price = "0" Then
+            Percent_Change = Yearly_Change
+            ' Print Percent Change in the Output Table
+            ws.Range("K" & Output_Table_Row).Value = Percent_Change
         Else
-    
-         ' Add to the Total Stock Volume
-         Total_Volume = Total_Volume + ws.Cells(i, 7).Value
-        
+            ws.Range("K" & Output_Table_Row).Value = "0.00%"
         End If
-    Next i
+    ' Output the Total Stock Volume
+    Total_Volume = Total_Volume + ws.Cells(i, 7).Value
+    ' Print the Total Stock Volume
+    ws.Range("L" & Output_Table_Row).Value = Total_Volume
+    ' Add one to the summary table row
+    Output_Table_Row = Output_Table_Row + 1
+    ' Reset variables
+    Total_Volume = 0
+    Open_Price = "0.00"
+    Close_Price = "0.00"
+    ' If the following cell has the same Ticker Symbol
+    Else
+    ' Add to the Total Stock Volume
+    Total_Volume = Total_Volume + ws.Cells(i, 7).Value
+    End If
+Next i
 
 ' Determine the greatest % increase and decrease
 Dim per_rng As Range
@@ -158,10 +142,9 @@ For i = 2 To LastRow_Volume
     End If
 Next i
 
-' Format values to percent
+'Format cells
+ws.Range("K:K").NumberFormat = "0.00%"
 ws.Range("P2:P3").NumberFormat = "0.00%"
-
-' Autofit data
 ws.Columns("I:P").AutoFit
 
 Next ws
