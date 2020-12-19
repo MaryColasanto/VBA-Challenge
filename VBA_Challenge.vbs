@@ -88,6 +88,15 @@ For i = 2 To LastRow_Ticker
     End If
 Next i
 
+' Bonus***
+
+' Label new columns and cells
+ws.Cells(2, 14) = "Greatest % Increase"
+ws.Cells(3, 14) = "Greatest % Decrease"
+ws.Cells(4, 14) = "Greatest Total Volume"
+ws.Cells(1, 15) = "Ticker"
+ws.Cells(1, 16) = "Value"
+
 ' Determine the greatest % increase and decrease
 Dim per_rng As Range
 Dim Percent_Max As Double
