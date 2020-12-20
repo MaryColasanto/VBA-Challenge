@@ -24,13 +24,19 @@ To add each ticker symbol to the output table: if the current ticker symbol did 
 
 ### Yearly change ###
 
-The yearly change was established by 
+The yearly change was established by subtracting the open price from the closed price. Open price was determined by a comparison of the ticker symbol. If the ticker symbol of the new row did not match the ticker symbol of the preceeding row, the open price of the new row was set as the open price for that ticker symbol. Close price was set when the current ticker symbol did not match the ticker symbol in the next row. Open and closed prices we reset to zero for each new ticker symbol.  
 
 ### Percent change ###
 
+Percent change was calculated as (Yearly Change / Open price) after both open price and close price had been determined for a single ticker in the For loop. To avoid division errors, when the yearly change was zero, the If statement directed the percent chnage to be reported at 0.00%, and if the open price was zero, the If statement directed the output to equal (yearly change / 1).
+
 ### Total stock volume ###
 
+Since the stock volume is always zero on the open price, the stock volume total was added when the ticker symbols in successive rows matched. The final value was calculated by adding the final stock volume of the row in which the ticker price did not match the following row, and this total volume was reported to the output table. When the total stock volume per ticker was added to the output table, a new row for the output table was generated. 
+
 ### Conditional formatting ###
+
+The conditional formatting was completed using an If statement for the Yearly Change. If the yearly change was zero, the cell was left white; if the change was positive, the cell was changed to green; and if the cell was neither zero or positive, the cell was colored red.   
 
 ## Bonus Assignment ##
 
