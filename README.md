@@ -24,7 +24,7 @@ To add each ticker symbol to the output table: if the current ticker symbol did 
 
 ### Yearly change ###
 
-The yearly change was established by subtracting the open price from the closed price. Open price was determined by a comparison of the ticker symbol. If the ticker symbol of the new row did not match the ticker symbol of the preceeding row, the open price of the new row was set as the open price for that ticker symbol. Close price was set when the current ticker symbol did not match the ticker symbol in the next row. Open and closed prices we reset to zero for each new ticker symbol.  
+The yearly change was established by subtracting the open price from the closed price. Open price was determined by a comparison of the ticker symbol. If the ticker symbol of the new row did not match the ticker symbol of the preceeding row, the open price of the new row was set as Open_Price. Close price was set when the current ticker symbol did not match the ticker symbol in the next row. Open and closed prices we reset to zero for each new ticker symbol.  
 
 ### Percent change ###
 
