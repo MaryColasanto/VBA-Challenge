@@ -24,7 +24,7 @@ To add each ticker symbol to the output table: if the current ticker symbol did 
 
 ### Yearly change ###
 
-The yearly change was established by subtracting the open price from the closed price. Open price was determined by a comparison of the ticker symbol. If the ticker symbol of the new row did not match the ticker symbol of the preceeding row, the open price of the new row was set as Open_Price. Close price was set when the current ticker symbol did not match the ticker symbol in the next row. Open and closed prices we reset to zero for each new ticker symbol.  
+The yearly change was established by subtracting the open price from the closed price. Open price was determined by a comparison of the ticker symbol. If the ticker symbol of the new row did not match the ticker symbol of the preceeding row, the open price of the new row was set as Open_Price. Close_Price was set at the current row value when the current ticker symbol did not match the ticker symbol in the next row. Open and closed prices we reset to zero for each new ticker symbol.  
 
 ### Percent change ###
 
@@ -32,7 +32,7 @@ Percent change was calculated as (Yearly Change / Open price) after both open pr
 
 ### Total stock volume ###
 
-Since the stock volume is always zero on the open price, the stock volume total was added when the ticker symbols in successive rows matched. The final value was calculated by adding the final stock volume of the row in which the ticker price did not match the following row, and this total volume was reported to the output table. When the total stock volume per ticker was added to the output table, a new row for the output table was generated. 
+Since the stock volume is always zero on the open price, the stock volume total was added when the ticker symbols in successive rows matched. The final value was calculated by adding the final stock volume of the row in which the ticker price did not match the following row, and this total volume was reported to the output table. When the total stock volume per ticker was added to the output table, the total volume was reset to zero and a new row for the output table was generated. 
 
 ### Conditional formatting ###
 
@@ -40,7 +40,7 @@ The conditional formatting was completed using an If statement for the Yearly Ch
 
 ## Bonus Assignment ##
 
-The bonus assignment asks for additional analysis of the data: greatest percent increase and decrease and greatest total volume. It also requests that we analyze the data for all three years provided.  
+The bonus assignment asks for additional analyses: greatest percent increase and decrease and greatest total volume. It also requests that we analyze the data for all three years provided.  
 
 New columns headers for "Greatest % Increase", "Greatest % Decrease", "Greatest Total Volume", "Ticker", and "Value" were added.
 
