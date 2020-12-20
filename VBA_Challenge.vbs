@@ -37,7 +37,7 @@ ws.Cells(1, 16) = "Value"
 ' Loop through all data in the column
 For i = 2 To LastRow_Ticker
     
-    ' Identify Starting Value for Percent Change
+    ' Identify the Open Price
     If ws.Cells(i, 1).Value <> ws.Cells(i - 1, 1) Then
         Open_Price = ws.Cells(i, 3).Value
     ' Identify when the ticker symbol changes
