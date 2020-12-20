@@ -14,7 +14,7 @@ To determine the last row of the ticker column, I utilized code provided in clas
 'code()'
   LastRow_Ticker = ws.Cells(Rows.Count, 1).End(xlUp).Row
   
-New columns headers for "Ticker", "Yearly Change", "Percent Change", and "Total Stock Volume" were added.
+New column headers for "Ticker", "Yearly Change", "Percent Change", and "Total Stock Volume" were added.
 
 For the entire main analysis a single For loop with multiple nested If statements was used to look through the data and report the requested values to the output table. The For loop started at row 2 and continued through the last row that contained data. 
 
