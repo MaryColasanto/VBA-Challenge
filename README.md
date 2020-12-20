@@ -46,13 +46,16 @@ New columns headers for "Greatest % Increase", "Greatest % Decrease", "Greatest 
 
 ### Greatest percent increase and decrease ###
 
-Since this analysis is dependent on the new column, I used a new variable to determine the last row. 
+Since this analysis is dependent on a new column, I used a new variable to determine the last row. I used the max and min worksheet functions to determine the value, set it as a new variable, and added it to the second output table. 
 
+[Tutorial on how to determine the max and min values in a range] (https://www.excelanytime.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid#Determine%20largest%20value%20in%20range)
 
-
-
-
-[Tutorial on how to determien the max and min values in a range] (https://www.excelanytime.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid#Determine%20largest%20value%20in%20range)
-
+To report the ticker symbol associated with the max and min, I used a For loop and If statement to assign the value of the ticker symbol based on the max and min row to the output table. 
 
 ### Greatest total volume ###
+
+The greatest volume analysis was completed in a similar manner to the above analysis. I used a new variable to determine the last row, determined the max value using the same max function, and reported the associated ticker symbol based on the row of the max value. 
+
+### Completing the analysis across several years ###
+
+The code was encapsulated in a For loop that instructed to the code to run for all worksheets in the workbook. 
