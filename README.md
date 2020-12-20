@@ -44,9 +44,15 @@ The bonus assignment asks for additional analysis of the data: greatest percent 
 
 New columns headers for "Greatest % Increase", "Greatest % Decrease", "Greatest Total Volume", "Ticker", and "Value" were added.
 
-
 ### Greatest percent increase and decrease ###
 
-### Greatest total volume ###
+Since this analysis is dependent on the new column, I used a new variable to determine the last row. 
 
-https://www.excelanytime.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid#Determine%20largest%20value%20in%20range
+
+
+
+
+[Tutorial on how to determien the max and min values in a range] (https://www.excelanytime.com/excel/index.php?option=com_content&view=article&id=105:find-smallest-and-largest-value-in-range-with-vba-excel&catid#Determine%20largest%20value%20in%20range)
+
+
+### Greatest total volume ###
